@@ -1,0 +1,73 @@
+{
+  "inodeCounter": 6,
+  "inodes": {
+    "0": {
+      "id": 0,
+      "type": "dir",
+      "content": "",
+      "entries": {
+        "home.txt": 1
+      },
+      "createdAt": "2026-04-15T17:38:03.415Z",
+      "permissions": "rwx",
+      "links": 1
+    },
+    "1": {
+      "id": 1,
+      "type": "file",
+      "content": "Welcome to MiniOS!",
+      "entries": {},
+      "createdAt": "2026-04-15T17:38:03.415Z",
+      "permissions": "rwx",
+      "links": 1
+    },
+    "2": {
+      "id": 2,
+      "type": "dir",
+      "content": "",
+      "entries": {
+        "notes.txt": 3,
+        "todo.txt": 4,
+        "readme.md": 5
+      },
+      "createdAt": "2026-04-15T17:38:03.417Z",
+      "permissions": "rwx",
+      "links": 1
+    },
+    "3": {
+      "id": 3,
+      "type": "file",
+      "content": "some notes here",
+      "entries": {},
+      "createdAt": "2026-04-15T17:38:03.418Z",
+      "permissions": "rwx",
+      "links": 1
+    },
+    "4": {
+      "id": 4,
+      "type": "file",
+      "content": "buy milk",
+      "entries": {},
+      "createdAt": "2026-04-15T17:38:03.418Z",
+      "permissions": "rwx",
+      "links": 1
+    },
+    "5": {
+      "id": 5,
+      "type": "file",
+      "content": "hello world",
+      "entries": {},
+      "createdAt": "2026-04-15T17:38:03.419Z",
+      "permissions": "rwx",
+      "links": 1
+    }
+  },
+  "root": {
+    "type": "dir",
+    "name": "/",
+    "entries": {
+      "home": 0,
+      "docs": 2
+    }
+  }
+}
