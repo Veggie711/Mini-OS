@@ -11,7 +11,7 @@ try {
   console.log("\nTest 1: cd to 'home'");
   let res1 = terminal.executeCommand("cd home");
   console.log("Result:", res1);
-  if (res1 !== "") throw new Error("Failed to cd to existing directory");
+  if (!res1.includes("Changed directory to: /home")) throw new Error("Failed to cd to existing directory");
 
   // Test 2: cd to a non-existent directory
   console.log("\nTest 2: cd to 'ghost_folder' (should fail)");
@@ -29,7 +29,7 @@ try {
   console.log("\nTest 4: cd .. (go back to root)");
   let res4 = terminal.executeCommand("cd ..");
   console.log("Result:", res4);
-  if (res4 !== "") throw new Error("Failed to cd ..");
+  if (!res4.includes("Changed directory to: /")) throw new Error("Failed to cd ..");
 
   console.log("\n✅ CD validation tests passed!");
 } catch (err) {

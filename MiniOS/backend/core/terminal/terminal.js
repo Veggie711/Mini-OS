@@ -156,6 +156,28 @@ function executeSingleCommand(input, pipedInput = null) {
     case "echo":
       return args.join(" ");
 
+    // 🚀 PROCESS MANAGEMENT (C++ KERNEL)
+    case "run":
+    case "ps":
+    case "kill":
+    case "start":
+    case "sync-test":
+    case "sleep":
+    case "io": {
+      const { execSync } = require("child_process");
+      const path = require("path");
+      const kernelPath = path.join(__dirname, "..", "..", "kernel", "kernel.exe");
+      try {
+        const cmdArgs = args.join(" ");
+        const output = execSync(`"${kernelPath}" ${cmd} ${cmdArgs}`, {
+          cwd: path.join(__dirname, "..", "..", "kernel")
+        });
+        return output.toString();
+      } catch (err) {
+        return `Kernel Error: ${err.stderr ? err.stderr.toString() : err.message}`;
+      }
+    }
+
     default:
       return `Command not found: ${cmd}`;
   }
